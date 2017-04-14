@@ -5,11 +5,12 @@ Function New-HyperV_VM {
 .DESCRIPTION
    Firstly, verify the name of the virtual switch defined in Hyper-V.  Secondly, verify the path of where the
    VHD/VHDX and VM config files will be saved.
-   When running the script, it will prompt for the hostname you wish to allocate to the new VM. If the hostname
-   already exist on the system, it WILL DELETE THE VM, AND FORCEFULLY DELETE THE VHD/VHDX.
+   When running the script, if the hostname already exist on the system, it 
+   WILL DELETE THE VM, AND FORCEFULLY DELETE THE VHD/VHDX.
 
    The script will create the new VM, with 2 CPU cores, a 40GB VHD/VHDX and 4GB RAM, and proceed to mount the
-   desired OS ISO.  Once created, the script will start the new VM, and open the VM Connect console.
+   desired OS ISO.  This can be changed by editing the appropriate variabled.
+   Once created, the script will start the new VM, and open the VM Connect console.
 .PARAMETER Srv
    Specify the hostname of the newly created VM.
 .PARAMETER Gen
