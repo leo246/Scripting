@@ -89,8 +89,8 @@ Function New-HyperV_VM {
             get-vm $Srv | set-vmmemory -DynamicMemoryEnabled $true -MinimumBytes (Invoke-expression $SRAM) -StartupBytes (Invoke-expression $SRAM) -MaximumBytes (Invoke-expression $SRAM)
             get-vm $Srv | Set-VMProcessor -count $CPU -CompatibilityForMigrationEnabled $true
             get-vm $Srv | Get-VMNetworkAdapter | Connect-VMNetworkAdapter -Switchname $Network
-            Get-vm $Srv | Add-VMDvdDrive
-            Set-VMDvdDrive -VMName $Srv -Path $ISO
+            #Get-vm $Srv | Add-VMDvdDrive
+            New-VMDvdDrive -VMName $Srv -Path $ISO
             
             $hdd = Get-VMHardDiskDrive $Srv
             $nic = Get-VMNetworkAdapter $Srv
